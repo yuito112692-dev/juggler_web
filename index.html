@@ -3,16 +3,39 @@
     <head>
         <meta charset="UTF-8">
         <title>朋友祭_ゲーム</title>
+        <style>
+            body {
+                background-color: #f0f0f0; /* 背景を少し見やすくグレーに（お好みで変えてください） */
+                font-family: sans-serif;
+                text-align: center;
+                padding: 20px;
+            }
+
+            /* 💡 ゲーム画面をスマホやPCに合わせて自動でちょうどいい大きさに縮める設定 */
+            .game-container {
+                width: 100%;
+                max-width: 960px; /* ★パソコンで見たときのゲームの最大横幅。大きすぎるなら 800px などに下げてもOK */
+                margin: 0 auto;   /* 画面の真ん中に寄せる */
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* ほんのり影をつけて立体感を出します */
+                background-color: #000;
+                line-height: 0;   /* 隙間を無くす */
+            }
+
+            .game-frame {
+                width: 100%;
+                aspect-ratio: 16 / 9; /* ★UnityのQHDと同じ「16:9」の比率に固定します */
+                border: none;
+            }
+        </style>
     </head>
     <body>
         <h1>注意点</h1>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <iframe src="./juggler_game/index.html" width="1280" height="720" style="border:none;">
-            お使いのブラウザはiframeに対応していません
-        </iframe>
+        <p>ここにゲームの注意事項などを書いてください。</p>
+        
+        <div class="game-container">
+            <iframe src="./juggler_game/index.html" class="game-frame">
+                お使いのブラウザはiframeに対応していません
+            </iframe>
+        </div>
     </body>
 </html>
