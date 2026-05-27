@@ -16,7 +16,7 @@
                 padding: 20px;
             }
 
-            /* 💡 ゲームと説明文を横並びにするための外枠 */
+            /* 💡 ゲームと右側エリアを横並びにするための外枠 */
             .main-layout {
                 display: flex;          
                 flex-wrap: wrap;       
@@ -26,7 +26,7 @@
                 margin: 0 auto;
             }
 
-            /* 💡 左側：ゲームエリア全体（一回り大きな外枠の線は消します） */
+            /* 💡 左側：ゲームエリア全体 */
             .game-wrapper {
                 flex: 1;               
                 min-width: 320px;      
@@ -35,31 +35,29 @@
                 box-sizing: border-box;  
             }
 
-            /* 💡 看板画像の設定（画像専用の黒枠をつけます） */
+            /* 看板画像の設定 */
             .game-banner {
                 display: block;
                 width: 100%;           
                 height: auto;          
                 object-fit: contain;   
-                
-                border: 4px solid black;       /* ⭕ 画像の周りに4pxの黒枠 */
-                border-bottom: none;           /* 💡 下側の線だけ消して、ゲーム画面と綺麗に繋げます */
+                border: 4px solid black;       
+                border-bottom: none;           
                 box-sizing: border-box;
             }
 
-            /* 💡 ゲーム画面の設定（ゲーム専用の黒枠をつけます） */
+            /* ゲーム画面の設定 */
             .game-frame {
                 width: 100%;
                 aspect-ratio: 16 / 9;   
                 display: block;
-
-                border: 4px solid black;       /* ⭕ ゲームの周りに4pxの黒枠（これが『間の線』になります！） */
+                border: 4px solid black;       
                 box-sizing: border-box;
             }
 
-            /* 右側：注意点や説明文を入れる枠の設定 */
+            /* 💡 右側：説明文や遊び方をまとめる白い枠 */
             .description-wrapper {
-                flex: 0 0 320px;       
+                flex: 0 0 350px;       /* 縦並びで見やすくなるよう、横幅を少しだけ広げました（320px → 350px） */
                 text-align: left;      
                 padding: 20px;
                 background-color: #ffffff; 
@@ -67,6 +65,14 @@
                 border-radius: 8px;        
                 box-shadow: 0 4px 6px rgba(0,0,0,0.05);
                 align-self: flex-start;    
+            }
+
+            /* 💡 注意点と遊び方の間にスキマを作る設定 */
+            .description-section {
+                margin-bottom: 30px;
+            }
+            .description-section:last-child {
+                margin-bottom: 0; /* 一番下のセクションは余白なし */
             }
 
             .description-wrapper h2 {
@@ -94,22 +100,26 @@
             </div>
             
             <div class="description-wrapper">
-                <h2>注意点および説明</h2>
-                <p>・手作りのため、本物とは設定が異なることがありますが、ご了承ください。</p>
-                <p>・ランプ点灯確率は1/15です。</p>
-                <p>・ボーナス中は1回転につき14COUNT増えます。</p>
-                <p>・BBは280COUNT、LBは140COUNTまで増えます。</p>
-                <p>・14COUNTにつき$1です。</p>
-                <p>・時間等の関係でPAYOUTが$100になったら終了します。</p>
-                <p>・ぜひお楽しみください。<br></p>
-            </div>
+                
+                <div class="description-section">
+                    <h2>注意点および説明</h2>
+                    <p>・手作りのため、本物とは設定が異なることがありますが、ご了承ください。</p>
+                    <p>・ランプ点灯確率は1/15です。</p>
+                    <p>・ボーナス中は1回転につき14COUNT増えます。</p>
+                    <p>・BBは280COUNT、LBは140COUNTまで増えます。</p>
+                    <p>・14COUNTにつき$1です。</p>
+                    <p>・時間等の関係でPAYOUTが$100になったら終了します。</p>
+                    <p>・ぜひお楽しみください。</p>
+                </div>
 
-            <div class="description-wrapper">
-                <h2>遊び方</h2>
-                <p>1. Bキー（BETボタン）を押す（サイがそろったら押さなくてもOK!）</p>
-                <p>2. スペースキー（STARTボタン）を押して回す</p>
-                <p>3. A, S, Dキー（ストップボタン）を押してスピンを止める</p>
-                <p><strong>★ランプが光ったら7を狙おう!</strong></p>
+                <div class="description-section">
+                    <h2>遊び方</h2>
+                    <p>1. Bキー（BETボタン）を押す（サイがそろったら押さなくてもOK!）</p>
+                    <p>2. スペースキー（STARTボタン）を押して回す</p>
+                    <p>3. A, S, Dキー（ストップボタン）を押してスピンを止める</p>
+                    <p><strong>★ランプが光ったら7を狙おう!</strong></p>
+                </div>
+
             </div>
 
         </div>
