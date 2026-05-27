@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <title>朋友祭_ゲーム</title>
-        <meta name="description" content="プログラミング学習の成果物を公開している個人のポートフォリオサイトです。有害なコンテンツや商用目的のページは含まれていません。">
-        <meta name="keywords" content="ポートフォリオ, プログラミング, 学習成果物, 個人サイト">
+        <meta name="description" content="プログラミング学習の成果物。">
+        <meta name="keywords" content="ポートフォリオ">
         <meta name="robots" content="index, follow">
         <meta name="rating" content="general">
         
@@ -16,65 +16,57 @@
                 padding: 20px;
             }
 
-            h1 {
-                text-align: center;
-                margin-bottom: 30px;
-            }
-
-            /* 💡 ゲームと説明文を横並びにするための外枠（コンテナ） */
+            /* 💡 ゲームと説明文を横並びにするための外枠 */
             .main-layout {
-                display: flex;          /* 横並びにする指示 */
-                flex-wrap: wrap;       /* 画面が狭いときは自動で上下に折り返す（スマホ対応） */
-                justify-content: center;/* 中央寄せ */
-                gap: 30px;             /* ゲームと説明文の間のスキマ */
-                max-width: 1400px;     /* 全体の最大横幅 */
+                display: flex;          
+                flex-wrap: wrap;       
+                justify-content: center;
+                gap: 30px;             
+                max-width: 1400px;     
                 margin: 0 auto;
             }
 
-            /* 💡 左側：ゲームを表示する枠の設定 */
+            /* 💡 左側：ゲームエリア全体（一回り大きな外枠の線は消します） */
             .game-wrapper {
                 flex: 1;               
                 min-width: 320px;      
                 max-width: 960px;      
-                height: 600px;
-                /* ⭕ 線の代わりに、ほんの少しだけ隙間（内側の余白）を作ります */
-                padding: 4px;            /* これが実質、4pxの綺麗な黒枠になります */
-                background-color: #000;  /* 枠の色（黒） */
-                
+                height: auto;          
                 box-sizing: border-box;  
-                line-height: 0;          
-                overflow: hidden;
             }
 
+            /* 💡 看板画像の設定（画像専用の黒枠をつけます） */
             .game-banner {
                 display: block;
-                width: 100%;           /* 横幅は黒枠にピッタリ合わせる */
+                width: 100%;           
+                height: auto;          
+                object-fit: contain;   
                 
-                /* 💡 ここを変更・追加します！ */
-                height: auto;          /* 縦幅を画像本来の比率（本物）に自動調整 */
-                object-fit: contain;   /* 画像が歪んだり引き伸ばされたりするのを防ぐ */
-                
-                margin-bottom: 0;      /* 💡 画像とゲーム画面の間の隙間を完全にゼロにする */
+                border: 4px solid black;       /* ⭕ 画像の周りに4pxの黒枠 */
+                border-bottom: none;           /* 💡 下側の線だけ消して、ゲーム画面と綺麗に繋げます */
+                box-sizing: border-box;
             }
 
+            /* 💡 ゲーム画面の設定（ゲーム専用の黒枠をつけます） */
             .game-frame {
                 width: 100%;
                 aspect-ratio: 16 / 9;   
-                border: none;           /* ❌ 線は完全に無しにします */
                 display: block;
-                transform: none;        /* ❌ 前回のズレ命令も綺麗にリセットします */
+
+                border: 4px solid black;       /* ⭕ ゲームの周りに4pxの黒枠（これが『間の線』になります！） */
+                box-sizing: border-box;
             }
 
-            /* 💡 右側：注意点や説明文を入れる枠の設定 */
+            /* 右側：注意点や説明文を入れる枠の設定 */
             .description-wrapper {
-                flex: 0 0 320px;       /* 横幅を320pxに固定して綺麗に見せる */
-                text-align: left;      /* 文章は左詰めで読みやすく */
+                flex: 0 0 320px;       
+                text-align: left;      
                 padding: 20px;
-                background-color: #ffffff; /* 文字が見やすいように白背景 */
-                border: 2px solid #ddd;    /* 薄いグレーの囲み線 */
-                border-radius: 8px;        /* 角を少し丸く */
+                background-color: #ffffff; 
+                border: 2px solid #ddd;    
+                border-radius: 8px;        
                 box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-                align-self: flex-start;    /* 上揃えにする */
+                align-self: flex-start;    
             }
 
             .description-wrapper h2 {
@@ -111,5 +103,5 @@
             </div>
 
         </div>
-        </body>
+    </body>
 </html>
