@@ -33,21 +33,25 @@
 
             /* 💡 左側：ゲームを表示する枠の設定 */
             .game-wrapper {
-                flex: 1;               /* 画面に合わせて柔軟に伸縮 */
-                min-width: 320px;      /* スマホでの最小幅 */
-                max-width: 960px;      /* パソコンでのゲームの最大幅 */
+                flex: 1;               
+                min-width: 320px;      
+                max-width: 960px;      
                 
-                border: 4px solid black; /* ⭕ 枠線をここ（外側の箱）につけます */
-                box-sizing: border-box;  /* 枠線がはみ出さないようにする設定 */
-                background-color: #000;  /* 背景を黒にしておく */
-                line-height: 0;          /* 隙間を無くす */
+                border: 4px solid black; 
+                box-sizing: border-box;  
+                background-color: #000;  
+                line-height: 0;          
+                overflow: hidden; /* 💡 もし無ければこれも追加：はみ出た分をカットします */
             }
 
             .game-frame {
                 width: 100%;
-                aspect-ratio: 16 / 9;   /* 16:9を維持 */
-                border: none;           /* ❌ ここにあった枠線は消します */
+                aspect-ratio: 16 / 9;   
+                border: none;           
                 display: block;
+
+                /* 💡 ここを追加！ゲーム画面全体を下に 4ピクセル（または5ピクセル）ずらします */
+                transform: translateY(4px); 
             }
 
             /* 💡 右側：注意点や説明文を入れる枠の設定 */
