@@ -46,6 +46,13 @@
                 overflow: hidden;
             }
 
+            .game-banner {
+                display: block;
+                width: 100%;           /* 黒枠の横幅に100%ぴったり合わせる */
+                height: auto;
+                margin-bottom: 4px;    /* 画像とゲーム画面の間にほんの少しだけ隙間を作る（ピッタリくっつけたいなら 0 にしてください） */
+            }
+
             .game-frame {
                 width: 100%;
                 aspect-ratio: 16 / 9;   
@@ -86,6 +93,7 @@
         <div class="main-layout">
             
             <div class="game-wrapper">
+                <img src="./juggler_hand" alt="ゲーム看板" class="game-banner">
                 <iframe src="./juggler_game/index.html" class="game-frame">
                     お使いのブラウザはiframeに対応していません
                 </iframe>
