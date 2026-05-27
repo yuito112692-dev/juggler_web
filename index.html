@@ -7,15 +7,91 @@
         <meta name="keywords" content="ポートフォリオ, プログラミング, 学習成果物, 個人サイト">
         <meta name="robots" content="index, follow">
         <meta name="rating" content="general">
+        
+        <style>
+            body {
+                font-family: sans-serif;
+                background-color: #f9f9f9;
+                margin: 0;
+                padding: 20px;
+            }
+
+            h1 {
+                text-align: center;
+                margin-bottom: 30px;
+            }
+
+            /* 💡 ゲームと説明文を横並びにするための外枠（コンテナ） */
+            .main-layout {
+                display: flex;          /* 横並びにする指示 */
+                flex-wrap: wrap;       /* 画面が狭いときは自動で上下に折り返す（スマホ対応） */
+                justify-content: center;/* 中央寄せ */
+                gap: 30px;             /* ゲームと説明文の間のスキマ */
+                max-width: 1400px;     /* 全体の最大横幅 */
+                margin: 0 auto;
+            }
+
+            /* 💡 左側：ゲームを表示する枠の設定 */
+            .game-wrapper {
+                flex: 1;               /* 画面に合わせて柔軟に伸縮 */
+                min-width: 320px;      /* スマホでの最小幅 */
+                max-width: 960px;      /* パソコンでのゲームの最大幅 */
+            }
+
+            .game-frame {
+                width: 100%;
+                aspect-ratio: 16 / 9;   /* 16:9を維持 */
+                border: 4px solid black;/* ゲーム画面の境界線だけに黒枠 */
+                box-sizing: border-box;
+                background-color: #000;
+            }
+
+            /* 💡 右側：注意点や説明文を入れる枠の設定 */
+            .description-wrapper {
+                flex: 0 0 320px;       /* 横幅を320pxに固定して綺麗に見せる */
+                text-align: left;      /* 文章は左詰めで読みやすく */
+                padding: 20px;
+                background-color: #ffffff; /* 文字が見やすいように白背景 */
+                border: 2px solid #ddd;    /* 薄いグレーの囲み線 */
+                border-radius: 8px;        /* 角を少し丸く */
+                box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+                align-self: flex-start;    /* 上揃えにする */
+            }
+
+            .description-wrapper h2 {
+                margin-top: 0;
+                font-size: 1.2rem;
+                border-bottom: 2px solid black;
+                padding-bottom: 5px;
+            }
+
+            .description-wrapper p {
+                font-size: 0.95rem;
+                line-height: 1.6;
+                margin: 10px 0;
+            }
+        </style>
     </head>
     <body>
-        <h1>注意点および説明</h1>
-        <p>このサイトは学校行事専用のサイトです</p>
-        <p>ランプ点灯確率は1/15です</p>
-        <p>ボーナス中は1回転につき14COUNT増えます</p>
-        <p>14COUNTにつき$1です</p>
-        <iframe src="./juggler_game/index.html" width="1280" height="720" style="border:4px solid black;">
-            お使いのブラウザはiframeに対応していません
-        </iframe>
-    </body>
+        <h1>朋友祭スロットゲーム</h1>
+        
+        <div class="main-layout">
+            
+            <div class="game-wrapper">
+                <iframe src="./juggler_game/index.html" class="game-frame">
+                    お使いのブラウザはiframeに対応していません
+                </iframe>
+            </div>
+            
+            <div class="description-wrapper">
+                <h2>注意点および説明</h2>
+                <p>・このサイトは学校行事専用のサイトです。</p>
+                <p>・ランプ点灯確率は1/15です。</p>
+                <p>・ボーナス中は1回転につき14COUNT増えます。</p>
+                <p>・14COUNTにつき$1です。</p>
+                <p>・時間等の関係でPAYOUTが$100になったら終了します。</p>
+            </div>
+
+        </div>
+        </body>
 </html>
